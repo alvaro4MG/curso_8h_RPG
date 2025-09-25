@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7ca894a1d1b4504490ec3a7f696de74, type: 3}
+  m_Name: QuestManzanitas
+  m_EditorClassIdentifier: 
+  _inventory: {fileID: 11400000, guid: 2134d5996907c344fa865564ef984452, type: 2}
+  _reward: {fileID: 11400000, guid: 46245dd393d18b0419efda4cda62d19d, type: 2}
+  _amount: 3
+  _requiredItem: {fileID: 11400000, guid: 0af4fe178d3161741a54defb32e04cc6, type: 2}
+  _requiredAmount: 5
