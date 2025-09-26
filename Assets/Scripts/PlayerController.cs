@@ -26,6 +26,8 @@ public class PlayerController : MonoBehaviour
     private Vector2 _input;
     private EState _state = EState.Idle;
 
+    private bool _controllable = true;
+
     // Awake se llama cuando se instancia el objeto
     void Awake()
     {
@@ -44,26 +46,29 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(_controllable){
+            if (Input.GetKeyDown(KeyCode.E))        //esconder el inventario
+            {
+                bool isActive = _inventoryPanel.activeSelf;
+                _inventoryPanel.SetActive(!isActive);
+            }
 
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            bool isActive = _inventoryPanel.activeSelf;
-            _inventoryPanel.SetActive(!isActive);  // alterna visible/invisible
+
+            
+            _input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;    //con esto se puede mover en diagonal
+            if(_input.x != 0 && _input.y != 0 ){            //de esta forma bloqueamos el movimiento en diagonal, solo para los lados
+                _input.y = 0;
+            }
+
+            //_rigidbody.MovePosition(_input * Time.deltaTime * _speed);     //distintas formas de mover al personaje (aunque el MovePosition no funciona así)
+            //transform.Translate(_input * Time.deltaTime * _speed);
+            //_rigidbody.velocity = _input * Time.deltaTime * _speed;
+
+            _rigidbody.velocity = _input * _speed;
+
+            UpdateAnimator();
+
         }
-
-        
-        _input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;    //con esto se puede mover en diagonal
-        if(_input.x != 0 && _input.y != 0 ){            //de esta forma bloqueamos el movimiento en diagonal, solo para los lados
-            _input.y = 0;
-        }
-
-        //_rigidbody.MovePosition(_input * Time.deltaTime * _speed);     //distintas formas de mover al personaje (aunque el MovePosition no funciona así)
-        //transform.Translate(_input * Time.deltaTime * _speed);
-        //_rigidbody.velocity = _input * Time.deltaTime * _speed;
-        _rigidbody.velocity = _input * _speed;
-
-        UpdateAnimator();
-
     }
 
     void UpdateAnimator(){
@@ -97,10 +102,15 @@ public class PlayerController : MonoBehaviour
             pickup.Pickup();
         }*/
 
-        var pickups = other.GetComponents<APickup>();
-        for(var i = 0; i < pickups.Length; i++){
-            pickups[i].Pickup();
+        if(other.TryGetComponent(out APickup pickup)){
+            var pickups = other.GetComponents<APickup>();
+            for(var i = 0; i < pickups.Length; i++){
+                pickups[i].Pickup();
+            }
+
         }
+
+
     }
 
     void MoveRight(){
