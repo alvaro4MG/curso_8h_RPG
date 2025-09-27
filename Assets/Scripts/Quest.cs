@@ -8,6 +8,9 @@ public class Quest : ScriptableObject
     [Header("References")]
     [SerializeField] private Inventory _inventory;
 
+    [Header("SFX Clip")]
+    [SerializeField] private AudioSource _sFXClip;
+
     [Header("Reward")]
     [SerializeField] private Item _reward;
     [SerializeField] private int _amount;
