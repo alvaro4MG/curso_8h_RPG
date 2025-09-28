@@ -1,10 +1,7 @@
 fileFormatVersion: 2
-guid: b694b22057cf35c4e96748f66d3f1f75
+guid: 42dfeeef28c68b443a4d16cccea388a4
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      41386430: 2186277476908879412
-    second: ImportLogs
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -41,7 +38,7 @@ TextureImporter:
     mipBias: 0
     wrapU: 1
     wrapV: 1
-    wrapW: 0
+    wrapW: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -50,8 +47,8 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 64
-  spriteBorder: {x: 49, y: 32, z: 49, w: 14}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -65,14 +62,14 @@ TextureImporter:
   compressionQualitySet: 0
   textureFormatSet: 0
   ignorePngGamma: 0
-  applyGammaDecoding: 1
+  applyGammaDecoding: 0
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 256
     resizeAlgorithm: 0
     textureFormat: 4
-    textureCompression: 2
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -84,7 +81,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -96,7 +93,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -107,13 +104,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: HouseRoof_0
+      name: HouseRoof2_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 94.5
-        width: 31.6
-        height: 31.5
+        y: 96
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -121,20 +118,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 197e2370b42b2a94392cabb9f8287c09
-      internalID: 771442086
+      spriteID: 169e67c81c3da90469f7b557b0ea997d
+      internalID: -973401047
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HouseRoof_1
+      name: HouseRoof2_1
       rect:
         serializedVersion: 2
-        x: 31
-        y: 94.5
-        width: 31.6
-        height: 31.5
+        x: 32
+        y: 96
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -142,20 +139,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0919ef0cee252cb4bb75dd5d900c9d93
-      internalID: 1634065392
+      spriteID: ceac6a0b85cd6d3419c08573ef736cd8
+      internalID: -291634817
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HouseRoof_2
+      name: HouseRoof2_2
       rect:
         serializedVersion: 2
-        x: 62
-        y: 94.5
-        width: 31.6
-        height: 31.5
+        x: 64
+        y: 96
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -163,20 +160,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3346aef86810a9041b33e71f1a95cff6
-      internalID: 1498326493
+      spriteID: fd1af7bfe33b1a143bd727b9220cc7e3
+      internalID: -1873849648
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HouseRoof_3
+      name: HouseRoof2_3
       rect:
         serializedVersion: 2
-        x: 93
-        y: 94.5
-        width: 31.6
-        height: 31.5
+        x: 96
+        y: 96
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -184,20 +181,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c2cbe2a452275274193bec64cbc2a21b
-      internalID: -80308744
+      spriteID: 37257a242fb1db94a882eba12ee95ac5
+      internalID: -1374736115
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HouseRoof_4
+      name: HouseRoof2_4
       rect:
         serializedVersion: 2
-        x: 124
-        y: 94.5
-        width: 31.6
-        height: 31.5
+        x: 128
+        y: 96
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -205,125 +202,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e76d58e257d471b46a791b1bbfa147d9
-      internalID: 1559126246
+      spriteID: b8c6e2396b099e646a8c5fcbfb05047a
+      internalID: 1672866264
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HouseRoof_5
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 63.5
-        width: 31.6
-        height: 31.5
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bc1e78333605e6f4d91772a600d45630
-      internalID: -412251603
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: HouseRoof_6
-      rect:
-        serializedVersion: 2
-        x: 31
-        y: 63.5
-        width: 31.6
-        height: 31.5
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6655699daf729324aa33b72f262be16f
-      internalID: 600679412
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: HouseRoof_7
-      rect:
-        serializedVersion: 2
-        x: 62
-        y: 63.5
-        width: 31.6
-        height: 31.5
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bd87e19047241d24b8b082009f44cf43
-      internalID: 1930012525
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: HouseRoof_8
-      rect:
-        serializedVersion: 2
-        x: 93
-        y: 63.5
-        width: 31.6
-        height: 31.5
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 66a8927867b9b3a4c91ed64c20541f12
-      internalID: 436357782
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: HouseRoof_9
-      rect:
-        serializedVersion: 2
-        x: 124
-        y: 63.5
-        width: 31.6
-        height: 31.5
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6aa19d0a3c3710c458bf46b9dcda310d
-      internalID: 643205777
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: HouseRoof_10
+      name: HouseRoof2_5
       rect:
         serializedVersion: 2
         x: 0
-        y: 32.5
-        width: 31.6
-        height: 31.5
+        y: 64
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -331,20 +223,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 99f719e0ab5501846b3c978593828def
-      internalID: 2132643000
+      spriteID: 1986565b7e57e0e4481fb49b49be4032
+      internalID: -1449077142
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HouseRoof_11
+      name: HouseRoof2_6
       rect:
         serializedVersion: 2
-        x: 31
-        y: 32.5
-        width: 31.6
-        height: 31.5
+        x: 32
+        y: 64
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -352,20 +244,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 637be9fa20b19b14fb4f9e8e2a8f6a92
-      internalID: -1242961995
+      spriteID: ffe2b12f707a43946884e45076282a8e
+      internalID: 1980894877
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HouseRoof_12
+      name: HouseRoof2_7
       rect:
         serializedVersion: 2
-        x: 62
-        y: 32.5
-        width: 31.6
-        height: 31.5
+        x: 64
+        y: 64
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -373,20 +265,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 234304aea51063843b20040652111919
-      internalID: -572131486
+      spriteID: 13ce6eac2a89b3a40b1cb76e6460bc7b
+      internalID: 470900033
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HouseRoof_13
+      name: HouseRoof2_8
       rect:
         serializedVersion: 2
-        x: 93
-        y: 32.5
-        width: 31.6
-        height: 31.5
+        x: 96
+        y: 64
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -394,20 +286,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7fd5211518aa4564e922fbe7de499458
-      internalID: 1624702721
+      spriteID: 43251b01ad195cb439703bc889de2e8d
+      internalID: -937279127
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HouseRoof_14
+      name: HouseRoof2_9
       rect:
         serializedVersion: 2
-        x: 124
-        y: 32.5
-        width: 31.6
-        height: 31.5
+        x: 128
+        y: 64
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -415,20 +307,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e9970ead8bb191b4db414aec27fbcbdb
-      internalID: -13755475
+      spriteID: b1991d8236c433a47a030f798049b234
+      internalID: -1157996633
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HouseRoof_15
+      name: HouseRoof2_10
       rect:
         serializedVersion: 2
         x: 0
-        y: 1.5
-        width: 31.6
-        height: 31.5
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -436,20 +328,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b823ebbfd9a23a041bd46a355148349c
-      internalID: 1210158090
+      spriteID: 9289acf6ad2872b4b8edf2fc4d00039b
+      internalID: -1413857860
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HouseRoof_16
+      name: HouseRoof2_11
       rect:
         serializedVersion: 2
-        x: 31
-        y: 1.5
-        width: 31.6
-        height: 31.5
+        x: 32
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -457,20 +349,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0b41620dca438e1448475a07d8d8dd1d
-      internalID: 1481727365
+      spriteID: ea2defa25a675f04c97229223fc2bef5
+      internalID: -1847517636
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HouseRoof_17
+      name: HouseRoof2_12
       rect:
         serializedVersion: 2
-        x: 62
-        y: 1.5
-        width: 31.6
-        height: 31.5
+        x: 64
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -478,20 +370,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f59a19a0bd41dee48bd626511e199467
-      internalID: 703464177
+      spriteID: 68554f92db5c28c48a003ca583e05226
+      internalID: 413879371
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HouseRoof_18
+      name: HouseRoof2_13
       rect:
         serializedVersion: 2
-        x: 93
-        y: 1.5
-        width: 31.6
-        height: 31.5
+        x: 96
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -499,20 +391,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7425225064a56b04b963d7a7f54fc990
-      internalID: 10769253
+      spriteID: 5093ec4938a9e514bb371fd4a2c40ea7
+      internalID: -770192441
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HouseRoof_19
+      name: HouseRoof2_14
       rect:
         serializedVersion: 2
-        x: 124
-        y: 1.5
-        width: 31.6
-        height: 31.5
+        x: 128
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -520,8 +412,113 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 556dea19b56496f46aab60e66fd18782
-      internalID: -2145947486
+      spriteID: c7824b6125cd51b4b82557673df9f8ff
+      internalID: 1575513082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HouseRoof2_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8633a0f411c631546b06368304785eee
+      internalID: -26350377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HouseRoof2_16
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a44f81dd478bcce4aad48f118180f6e6
+      internalID: 884029084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HouseRoof2_17
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de2be452adf33374f8ade92f554b1000
+      internalID: -773214579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HouseRoof2_18
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64043969104c1ce42a9af354557db128
+      internalID: 1256482104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HouseRoof2_19
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcd5446e4cda98d4d89380ca800547df
+      internalID: -1903181802
       vertices: []
       indices: 
       edges: []
@@ -529,7 +526,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 67374835aae4b994faaa7606e7d35ce0
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -537,26 +534,26 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      HouseRoof_16: 1481727365
-      HouseRoof_5: -412251603
-      HouseRoof_0: 771442086
-      HouseRoof_13: 1624702721
-      HouseRoof_4: 1559126246
-      HouseRoof_1: 1634065392
-      HouseRoof_9: 643205777
-      HouseRoof_14: -13755475
-      HouseRoof_17: 703464177
-      HouseRoof_2: 1498326493
-      HouseRoof_10: 2132643000
-      HouseRoof_18: 10769253
-      HouseRoof_15: 1210158090
-      HouseRoof_11: -1242961995
-      HouseRoof_12: -572131486
-      HouseRoof_8: 436357782
-      HouseRoof_19: -2145947486
-      HouseRoof_7: 1930012525
-      HouseRoof_3: -80308744
-      HouseRoof_6: 600679412
+      HouseRoof2_18: 1256482104
+      HouseRoof2_0: -973401047
+      HouseRoof2_17: -773214579
+      HouseRoof2_4: 1672866264
+      HouseRoof2_15: -26350377
+      HouseRoof2_6: 1980894877
+      HouseRoof2_8: -937279127
+      HouseRoof2_2: -1873849648
+      HouseRoof2_7: 470900033
+      HouseRoof2_12: 413879371
+      HouseRoof2_14: 1575513082
+      HouseRoof2_5: -1449077142
+      HouseRoof2_19: -1903181802
+      HouseRoof2_9: -1157996633
+      HouseRoof2_10: -1413857860
+      HouseRoof2_13: -770192441
+      HouseRoof2_3: -1374736115
+      HouseRoof2_1: -291634817
+      HouseRoof2_16: 884029084
+      HouseRoof2_11: -1847517636
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

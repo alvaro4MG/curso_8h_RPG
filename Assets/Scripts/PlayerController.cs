@@ -56,9 +56,9 @@ public class PlayerController : MonoBehaviour
 
             
             _input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;    //con esto se puede mover en diagonal
-            if(_input.x != 0 && _input.y != 0 ){            //de esta forma bloqueamos el movimiento en diagonal, solo para los lados
+            /*if(_input.x != 0 && _input.y != 0 ){            //de esta forma bloqueamos el movimiento en diagonal, solo para los lados
                 _input.y = 0;
-            }
+            }*/
 
             //_rigidbody.MovePosition(_input * Time.deltaTime * _speed);     //distintas formas de mover al personaje (aunque el MovePosition no funciona así)
             //transform.Translate(_input * Time.deltaTime * _speed);
