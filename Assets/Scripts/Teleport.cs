@@ -10,6 +10,7 @@ public class Teleport : MonoBehaviour
     [SerializeField] private CinemachineVirtualCamera _exteriorCam;
     [SerializeField] private CinemachineVirtualCamera _interiorCam;
     [SerializeField] private Animator _fadeAnimator;
+    [SerializeField] private AudioSource _audio;
     
 
     private void OnTriggerEnter2D(Collider2D other){
@@ -17,6 +18,7 @@ public class Teleport : MonoBehaviour
         if(other.TryGetComponent(out PlayerController player)){
 
             _fadeAnimator.Play("fadeBlack");
+            _audio.Play();
 
 
             //_exteriorCam.Priority = 0;
