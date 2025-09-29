@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour
     private Vector2 _input;
     private EState _state = EState.Idle;
 
-    private bool _controllable = true;
+    public bool isControllable = true;
 
     // Awake se llama cuando se instancia el objeto
     void Awake()
@@ -46,7 +46,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(_controllable){
+        if(isControllable){
             if (Input.GetKeyDown(KeyCode.E))        //esconder el inventario
             {
                 bool isActive = _inventoryPanel.activeSelf;
