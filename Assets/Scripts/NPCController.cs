@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(SpriteRenderer))]
 [RequireComponent(typeof(ANPC))]
@@ -9,12 +10,13 @@ public class NPCController : MonoBehaviour
 {
 
     private ANPC _behaviour;
-
     private SpriteRenderer _renderer;
 
     private bool _interactuable = false;
     private bool _missionStarted = false;       //Change this depending on other behaviours
     private bool _missionCompleted = false;
+
+    private InputActions _controls;
 
     void Awake(){
         _renderer = GetComponent<SpriteRenderer>();
@@ -25,20 +27,29 @@ public class NPCController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (_interactuable && !_missionStarted && Input.GetKeyDown(KeyCode.Q))
+        /*if (_interactuable && !_missionStarted && Input.GetKeyDown(KeyCode.Q))
         {
+            Interacted();
+            _missionStarted = true;
+        }*/
+    }
+
+    private void OnInteractPerformed(InputAction.CallbackContext ctx) {
+        if (_interactuable && !_missionStarted){
             Interacted();
             _missionStarted = true;
         }
     }
 
     private void OnTriggerEnter2D(Collider2D other){
-        //if(other.CompareTag("pickup")){     //hacerlo por tags puede complicar el código
         
-        if(other.TryGetComponent(out PlayerController player)){        //esto sirve para cuando los objetos tienen un solo comportamiento
+        if(other.TryGetComponent(out PlayerController player)){
 
             //Debug.Log("Player entered");
             _interactuable = true;
+            _controls = player.Controls;
+            _controls.Player.Interact.performed -= OnInteractPerformed;
+            _controls.Player.Interact.performed += OnInteractPerformed;
 
             if(!_missionCompleted){
                 if(_missionStarted){
@@ -57,6 +68,10 @@ public class NPCController : MonoBehaviour
         if(other.TryGetComponent(out PlayerController player)){
             _interactuable = false;
             _renderer.color = Color.white;
+
+            if(_controls != null){
+                _controls.Player.Interact.performed -= OnInteractPerformed;
+            }
         }
 
     }

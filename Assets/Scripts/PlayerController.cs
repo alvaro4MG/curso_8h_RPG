@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(Rigidbody2D))]     //inyección de dependencia
 [RequireComponent(typeof(Animator))]
@@ -27,12 +28,16 @@ public class PlayerController : MonoBehaviour
     private EState _state = EState.Idle;
 
     public bool isControllable = true;
+    private InputActions _controls;
+    public InputActions Controls => _controls;
 
     // Awake se llama cuando se instancia el objeto
     void Awake()
     {
         _rigidbody = GetComponent<Rigidbody2D>();   //coger referencias es mejor en el Awake, inicializaciones en el Start
         _animator = GetComponent<Animator>();
+
+        _controls = new InputActions();     //for new Input System
     }
 
     // Start is called before the first frame update
@@ -44,7 +49,7 @@ public class PlayerController : MonoBehaviour
     
 
     // Update is called once per frame
-    void Update()
+    /*void Update()                         //Previous update with old Input Manager, now done with Input System
     {
         if(isControllable){
             if (Input.GetKeyDown(KeyCode.E))        //esconder el inventario
@@ -58,7 +63,7 @@ public class PlayerController : MonoBehaviour
             _input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;    //con esto se puede mover en diagonal
             /*if(_input.x != 0 && _input.y != 0 ){            //de esta forma bloqueamos el movimiento en diagonal, solo para los lados
                 _input.y = 0;
-            }*/
+            }
 
             //_rigidbody.MovePosition(_input * Time.deltaTime * _speed);     //distintas formas de mover al personaje (aunque el MovePosition no funciona así)
             //transform.Translate(_input * Time.deltaTime * _speed);
@@ -69,6 +74,36 @@ public class PlayerController : MonoBehaviour
             UpdateAnimator();
 
         }
+    }*/
+    void Update()
+    {
+        if (isControllable) {
+            //_input = _controls.Player.Move.ReadValue<Vector2>().normalized;   //limits to 0 or 1
+
+            _input = _controls.Player.Move.ReadValue<Vector2>();
+            if (_input.magnitude < 0.2f) {          //to avoid deadzones
+                _input = Vector2.zero;
+            }
+
+            _rigidbody.velocity = _input * _speed;
+
+            UpdateAnimator();
+        }
+    }
+
+    private void OnEnable() {
+        _controls.Player.Enable();
+        _controls.Player.Inventory.performed += OnInventoryToggle;
+    }
+
+    private void OnDisable() {
+        _controls.Player.Disable();
+        _controls.Player.Inventory.performed -= OnInventoryToggle;
+    }
+
+    private void OnInventoryToggle(InputAction.CallbackContext ctx) {
+        bool isActive = _inventoryPanel.activeSelf;
+        _inventoryPanel.SetActive(!isActive);
     }
 
     void UpdateAnimator(){
