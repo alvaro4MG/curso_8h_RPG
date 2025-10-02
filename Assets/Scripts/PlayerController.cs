@@ -31,6 +31,8 @@ public class PlayerController : MonoBehaviour
     private InputActions _controls;
     public InputActions Controls => _controls;
 
+    private float _sprint = 1f;
+
     // Awake se llama cuando se instancia el objeto
     void Awake()
     {
@@ -85,7 +87,7 @@ public class PlayerController : MonoBehaviour
                 _input = Vector2.zero;
             }
 
-            _rigidbody.velocity = _input * _speed;
+            _rigidbody.velocity = _input * _speed * _sprint;
 
             UpdateAnimator();
         }
@@ -94,16 +96,30 @@ public class PlayerController : MonoBehaviour
     private void OnEnable() {
         _controls.Player.Enable();
         _controls.Player.Inventory.performed += OnInventoryToggle;
+
+        _controls.Player.Sprint.performed += OnSprintPerformed;
+        _controls.Player.Sprint.canceled += OnSprintCanceled;
     }
 
     private void OnDisable() {
         _controls.Player.Disable();
         _controls.Player.Inventory.performed -= OnInventoryToggle;
+
+        _controls.Player.Sprint.performed -= OnSprintPerformed;
+        _controls.Player.Sprint.canceled -= OnSprintCanceled;
     }
 
     private void OnInventoryToggle(InputAction.CallbackContext ctx) {
         bool isActive = _inventoryPanel.activeSelf;
         _inventoryPanel.SetActive(!isActive);
+    }
+
+    private void OnSprintPerformed(InputAction.CallbackContext ctx) {
+        _sprint = 1.5f;
+    }
+
+    private void OnSprintCanceled(InputAction.CallbackContext ctx) {
+        _sprint = 1f;
     }
 
     void UpdateAnimator(){
