@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using System.Collections;
 using System.Collections.Generic;
@@ -10,18 +11,30 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private AudioSource _backgroundMusic;
     [SerializeField] private AudioSource _sFXClip;
 
+    private InputActions _controls;
+
+    private void Awake(){
+        _animator = GetComponent<Animator>();
+        //_backgroundMusic = GetComponent<AudioSource>();
+        _controls = new InputActions();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        _animator = GetComponent<Animator>();
-        //_backgroundMusic = GetComponent<AudioSource>();
-
         _animator.Play("toggle");
         _backgroundMusic.Play();
     }
 
+    private void OnEnable() {
+        _controls.UI.Enable();
+
+        _controls.UI.AcceptUI.performed += OnAcceptUIPerformed;
+        _controls.UI.CancelUI.performed += OnCancelUIPerformed;
+    }
+
     // Update is called once per frame
-    void Update()
+    /*void Update()
     {
         if (Input.GetKeyDown(KeyCode.E)){
 
@@ -31,7 +44,17 @@ public class MainMenu : MonoBehaviour
         }else if (Input.GetKeyDown(KeyCode.Q)){
             QuitGame();
         }
+    }*/
+
+    private void OnAcceptUIPerformed(InputAction.CallbackContext ctx) {
+        StartCoroutine(PlayGame());
+        _controls.UI.Disable();
     }
+
+    private void OnCancelUIPerformed(InputAction.CallbackContext ctx) {
+        QuitGame();
+    }
+
 
 
     private IEnumerator PlayGame()

@@ -62,6 +62,15 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Sprint"",
+                    ""type"": ""Button"",
+                    ""id"": ""4f595fde-bd1f-4a73-a57f-f9c625c6ce4d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -240,6 +249,28 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
                     ""action"": ""Pause"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7be746b6-ec77-4731-aec2-997ebc0fc78d"",
+                    ""path"": ""<Keyboard>/shift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Sprint"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ac94fa72-1714-4e72-8433-75fcfd823a65"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Sprint"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -266,7 +297,7 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""DenyUI"",
+                    ""name"": ""CancelUI"",
                     ""type"": ""Button"",
                     ""id"": ""dffb3da9-c35a-45b0-abc2-6233907f174c"",
                     ""expectedControlType"": ""Button"",
@@ -446,7 +477,7 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""DenyUI"",
+                    ""action"": ""CancelUI"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -457,7 +488,7 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""DenyUI"",
+                    ""action"": ""CancelUI"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -494,11 +525,12 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
         m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
         m_Player_Inventory = m_Player.FindAction("Inventory", throwIfNotFound: true);
         m_Player_Pause = m_Player.FindAction("Pause", throwIfNotFound: true);
+        m_Player_Sprint = m_Player.FindAction("Sprint", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_MoveUI = m_UI.FindAction("MoveUI", throwIfNotFound: true);
         m_UI_AcceptUI = m_UI.FindAction("AcceptUI", throwIfNotFound: true);
-        m_UI_DenyUI = m_UI.FindAction("DenyUI", throwIfNotFound: true);
+        m_UI_CancelUI = m_UI.FindAction("CancelUI", throwIfNotFound: true);
         m_UI_ExitUI = m_UI.FindAction("ExitUI", throwIfNotFound: true);
     }
 
@@ -563,6 +595,7 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Interact;
     private readonly InputAction m_Player_Inventory;
     private readonly InputAction m_Player_Pause;
+    private readonly InputAction m_Player_Sprint;
     public struct PlayerActions
     {
         private @InputActions m_Wrapper;
@@ -571,6 +604,7 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
         public InputAction @Interact => m_Wrapper.m_Player_Interact;
         public InputAction @Inventory => m_Wrapper.m_Player_Inventory;
         public InputAction @Pause => m_Wrapper.m_Player_Pause;
+        public InputAction @Sprint => m_Wrapper.m_Player_Sprint;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -592,6 +626,9 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
                 @Pause.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPause;
                 @Pause.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPause;
                 @Pause.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPause;
+                @Sprint.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSprint;
+                @Sprint.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSprint;
+                @Sprint.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSprint;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -608,6 +645,9 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
                 @Pause.started += instance.OnPause;
                 @Pause.performed += instance.OnPause;
                 @Pause.canceled += instance.OnPause;
+                @Sprint.started += instance.OnSprint;
+                @Sprint.performed += instance.OnSprint;
+                @Sprint.canceled += instance.OnSprint;
             }
         }
     }
@@ -618,7 +658,7 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
     private IUIActions m_UIActionsCallbackInterface;
     private readonly InputAction m_UI_MoveUI;
     private readonly InputAction m_UI_AcceptUI;
-    private readonly InputAction m_UI_DenyUI;
+    private readonly InputAction m_UI_CancelUI;
     private readonly InputAction m_UI_ExitUI;
     public struct UIActions
     {
@@ -626,7 +666,7 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
         public UIActions(@InputActions wrapper) { m_Wrapper = wrapper; }
         public InputAction @MoveUI => m_Wrapper.m_UI_MoveUI;
         public InputAction @AcceptUI => m_Wrapper.m_UI_AcceptUI;
-        public InputAction @DenyUI => m_Wrapper.m_UI_DenyUI;
+        public InputAction @CancelUI => m_Wrapper.m_UI_CancelUI;
         public InputAction @ExitUI => m_Wrapper.m_UI_ExitUI;
         public InputActionMap Get() { return m_Wrapper.m_UI; }
         public void Enable() { Get().Enable(); }
@@ -643,9 +683,9 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
                 @AcceptUI.started -= m_Wrapper.m_UIActionsCallbackInterface.OnAcceptUI;
                 @AcceptUI.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnAcceptUI;
                 @AcceptUI.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnAcceptUI;
-                @DenyUI.started -= m_Wrapper.m_UIActionsCallbackInterface.OnDenyUI;
-                @DenyUI.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnDenyUI;
-                @DenyUI.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnDenyUI;
+                @CancelUI.started -= m_Wrapper.m_UIActionsCallbackInterface.OnCancelUI;
+                @CancelUI.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnCancelUI;
+                @CancelUI.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnCancelUI;
                 @ExitUI.started -= m_Wrapper.m_UIActionsCallbackInterface.OnExitUI;
                 @ExitUI.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnExitUI;
                 @ExitUI.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnExitUI;
@@ -659,9 +699,9 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
                 @AcceptUI.started += instance.OnAcceptUI;
                 @AcceptUI.performed += instance.OnAcceptUI;
                 @AcceptUI.canceled += instance.OnAcceptUI;
-                @DenyUI.started += instance.OnDenyUI;
-                @DenyUI.performed += instance.OnDenyUI;
-                @DenyUI.canceled += instance.OnDenyUI;
+                @CancelUI.started += instance.OnCancelUI;
+                @CancelUI.performed += instance.OnCancelUI;
+                @CancelUI.canceled += instance.OnCancelUI;
                 @ExitUI.started += instance.OnExitUI;
                 @ExitUI.performed += instance.OnExitUI;
                 @ExitUI.canceled += instance.OnExitUI;
@@ -675,12 +715,13 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
         void OnInteract(InputAction.CallbackContext context);
         void OnInventory(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
+        void OnSprint(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {
         void OnMoveUI(InputAction.CallbackContext context);
         void OnAcceptUI(InputAction.CallbackContext context);
-        void OnDenyUI(InputAction.CallbackContext context);
+        void OnCancelUI(InputAction.CallbackContext context);
         void OnExitUI(InputAction.CallbackContext context);
     }
 }

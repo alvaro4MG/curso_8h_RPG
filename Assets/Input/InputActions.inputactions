@@ -40,6 +40,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Sprint",
+                    "type": "Button",
+                    "id": "4f595fde-bd1f-4a73-a57f-f9c625c6ce4d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -218,6 +227,28 @@
                     "action": "Pause",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7be746b6-ec77-4731-aec2-997ebc0fc78d",
+                    "path": "<Keyboard>/shift",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Sprint",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ac94fa72-1714-4e72-8433-75fcfd823a65",
+                    "path": "<Gamepad>/rightTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Sprint",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
@@ -244,7 +275,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "DenyUI",
+                    "name": "CancelUI",
                     "type": "Button",
                     "id": "dffb3da9-c35a-45b0-abc2-6233907f174c",
                     "expectedControlType": "Button",
@@ -424,7 +455,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "DenyUI",
+                    "action": "CancelUI",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -435,7 +466,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "DenyUI",
+                    "action": "CancelUI",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
