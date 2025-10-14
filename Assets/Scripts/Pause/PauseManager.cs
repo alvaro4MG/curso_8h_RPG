@@ -40,17 +40,15 @@ public class PauseManager : MonoBehaviour
 
     private void OnPausePerformed(InputAction.CallbackContext context){
         //Debug.Log("Pausa");
-        _controls.UI.Enable();
-        if (_isPaused){
-            Resume();
-        }else{
+        if (!_isPaused){
+            _controls.UI.Enable();
             Pause();
         }
     }
 
     private void OnExitUIPerformed(InputAction.CallbackContext context){
-        _controls.UI.Disable();
         if (_isPaused){
+            _controls.UI.Disable();
             Resume();
         }
     }
