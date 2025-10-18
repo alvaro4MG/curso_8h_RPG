@@ -10,6 +10,9 @@ The base game was developed following the Level Up Game Dev Hub course "[Tools a
 
 This demo will be periodically updated as I add new features and polish existing ones.
 
+Chech out its current state as of the 8th of October 2025 [here](https://youtu.be/GtS8wwbFar4).
+
+
 ---
 
 ## Current features
