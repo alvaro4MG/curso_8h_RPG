@@ -8,9 +8,9 @@ This project will showcase different implementations on my **2D RPG Unity Demo**
 
 The base game was developed following the Level Up Game Dev Hub course "[Tools and components for 2D games with Unity](https://www.levelup-gamedevhub.com/formacion/cursos/campus-online-herramientas-y-componentes-para-hacer-juegos-2d-con-unity-8h/)".
 
-This demo will be periodically updated as I add new features and polish existing ones.
+This demo has been paused to develop other projects, like [PokeLearn](https://alvaro4mg.itch.io/pokelearn) or Encrypted.
 
-Chech out its current state as of the 8th of October 2025 [here](https://youtu.be/GtS8wwbFar4).
+Check out its current state as of the 8th of October 2025 [here](https://youtu.be/GtS8wwbFar4).
 
 
 ---
